@@ -5,55 +5,64 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tools & Gadgets I Use / Recommend</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
   <style>
     * { box-sizing: border-box; margin:0; padding:0; font-family: 'Inter', sans-serif; }
 
-    /* Background + base text */
-    body { background: #0d0f12; color: #dce7f2; line-height:1.6;}
+    body {
+      background: #000; 
+      color: #e0eafe; 
+      line-height:1.6;
+    }
 
-    a { text-decoration:none; color: inherit;}
+    a { text-decoration:none; color: inherit; }
 
-    /* Header */
+    /* HEADER */
     header {
-      background: #0f1115;
-      color: #4db8ff;
+      background: #001a33;
+      color:#00aaff;
       padding:2rem 1rem;
       text-align:center;
-      border-bottom: 2px solid #4db8ff;
+      border-bottom: 2px solid #00aaff;
     }
-    header h1 { font-size:2rem; }
 
-    /* Containers */
-    .container { max-width:1200px; margin:2rem auto; padding:0 1rem;}
+    header h1 {
+      font-size:2rem;
+      text-shadow: 0 0 10px #0094ff;
+    }
 
-    /* Section Titles */
+    /* LAYOUT */
+    .container { max-width:1200px; margin:2rem auto; padding:0 1rem; }
+
     .section { margin-bottom:3rem; }
+
     .section h2 {
-      font-size:1.6rem;
+      font-size:1.5rem;
       margin-bottom:1rem;
-      color:#4db8ff;
+      color:#00aaff;
+      text-shadow: 0 0 8px #007acc;
     }
 
-    /* Card Grid */
+    /* CARDS */
     .cards {
       display:grid;
       grid-template-columns:repeat(auto-fill,minmax(200px,1fr));
       gap:1rem;
     }
 
-    /* Cards */
     .card {
-      background:#14171c;
-      border:1px solid #1c212a;
-      border-radius:12px;
+      background:#0a0a0a;
+      border:1px solid #003a66;
+      border-radius:10px;
       overflow:hidden;
-      box-shadow:0 4px 10px rgba(0, 0, 0, 0.35);
-      transition:transform 0.2s, box-shadow 0.2s, border 0.2s;
+      box-shadow:0 4px 12px rgba(0, 170, 255, 0.2);
+      transition:transform 0.2s, box-shadow 0.2s, border-color 0.2s;
     }
+
     .card:hover {
       transform: translateY(-5px);
-      box-shadow:0 8px 20px rgba(77, 184, 255, 0.3);
-      border:1px solid #4db8ff;
+      box-shadow:0 8px 20px rgba(0, 170, 255, 0.4);
+      border-color:#00aaff;
     }
 
     .card img { width:100%; height:150px; object-fit:cover; }
@@ -62,27 +71,29 @@
 
     .card-content h3 {
       margin-bottom:0.5rem;
-      color:#4db8ff;
-    }
-    .card-content p {
-      font-size:0.95rem;
-      color:#b7c4d3;
+      color:#00aaff;
+      text-shadow: 0 0 6px #0088dd;
     }
 
-    /* Footer */
+    .card-content p {
+      font-size:0.95rem;
+      color:#c7d9ff;
+    }
+
+    /* FOOTER */
     footer {
       text-align:center;
       padding:2rem 1rem;
-      background:#0f1115;
-      color:#4db8ff;
-      border-top: 2px solid #4db8ff;
-      margin-top:3rem;
+      background:#00111f;
+      color:#00aaff;
+      border-top: 2px solid #00aaff;
     }
 
     @media(max-width:600px){
       header h1{ font-size:1.5rem; }
     }
   </style>
+
 </head>
 <body>
 
@@ -92,13 +103,143 @@
 
 <div class="container">
 
-  <!-- Sections remain unchanged -->
-  <!-- (Your AI Tools, Apps, Gadgets, Deals content goes here) -->
+  <!-- Section 1: AI Tools -->
+  <div class="section">
+    <h2>🔹 AI Tools That Save You Hours</h2>
+    <div class="cards">
+      <a href="https://www.jasper.ai?aff=YOUR_AFFILIATE_ID" target="_blank" class="card">
+        <img src="https://images.unsplash.com/photo-1581091012184-7f0a5f7a7f14?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80" alt="Jasper AI">
+        <div class="card-content">
+          <h3>Jasper AI</h3>
+          <p>AI writing assistant for blogs, emails, and social media.</p>
+        </div>
+      </a>
+      <a href="https://pictory.ai?ref=YOUR_AFFILIATE_ID" target="_blank" class="card">
+        <img src="https://images.unsplash.com/photo-1593642634367-d91a135587b5?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80" alt="Pictory AI">
+        <div class="card-content">
+          <h3>Pictory AI</h3>
+          <p>Create videos automatically from scripts or articles.</p>
+        </div>
+      </a>
+      <a href="https://www.descript.com?ref=YOUR_AFFILIATE_ID" target="_blank" class="card">
+        <img src="https://images.unsplash.com/photo-1581092795360-4790e0f56d97?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80" alt="Descript">
+        <div class="card-content">
+          <h3>Descript</h3>
+          <p>Edit audio & video effortlessly, with AI transcription.</p>
+        </div>
+      </a>
+      <a href="https://www.grammarly.com?ref=YOUR_AFFILIATE_ID" target="_blank" class="card">
+        <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80" alt="Grammarly">
+        <div class="card-content">
+          <h3>Grammarly</h3>
+          <p>Grammar and style suggestions to write faster and better.</p>
+        </div>
+      </a>
+      <a href="https://www.canva.com/pro?ref=YOUR_AFFILIATE_ID" target="_blank" class="card">
+        <img src="https://images.unsplash.com/photo-1517430816045-df4b7de11d1e?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80" alt="Canva Pro">
+        <div class="card-content">
+          <h3>Canva Pro</h3>
+          <p>Design graphics, presentations, and social media content.</p>
+        </div>
+      </a>
+      <a href="https://www.notion.so/product?ref=YOUR_AFFILIATE_ID" target="_blank" class="card">
+        <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80" alt="Notion AI">
+        <div class="card-content">
+          <h3>Notion AI</h3>
+          <p>Organize work, notes, and AI-powered writing in one place.</p>
+        </div>
+      </a>
+    </div>
+  </div>
+
+  <!-- Section 2: Essential Apps -->
+  <div class="section">
+    <h2>🔹 Essential Apps (Free + Paid)</h2>
+    <div class="cards">
+      <a href="https://clickup.com?ref=YOUR_AFFILIATE_ID" target="_blank" class="card">
+        <img src="https://images.unsplash.com/photo-1581092795360-4790e0f56d97?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80" alt="ClickUp">
+        <div class="card-content">
+          <h3>ClickUp</h3>
+          <p>Project management tool to boost productivity and track tasks.</p>
+        </div>
+      </a>
+      <a href="https://calendly.com?ref=YOUR_AFFILIATE_ID" target="_blank" class="card">
+        <img src="https://images.unsplash.com/photo-1588702547923-7093a6c3ba33?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80" alt="Calendly">
+        <div class="card-content">
+          <h3>Calendly</h3>
+          <p>Schedule meetings without the back-and-forth emails.</p>
+        </div>
+      </a>
+      <a href="https://www.loom.com?ref=YOUR_AFFILIATE_ID" target="_blank" class="card">
+        <img src="https://images.unsplash.com/photo-1580894732444-14c09c5e1d55?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80" alt="Loom">
+        <div class="card-content">
+          <h3>Loom</h3>
+          <p>Record and share video messages or tutorials quickly.</p>
+        </div>
+      </a>
+      <a href="https://www.tubebuddy.com?ref=YOUR_AFFILIATE_ID" target="_blank" class="card">
+        <img src="https://images.unsplash.com/photo-1581092795360-4790e0f56d97?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80" alt="TubeBuddy">
+        <div class="card-content">
+          <h3>TubeBuddy</h3>
+          <p>YouTube management and SEO tool for creators.</p>
+        </div>
+      </a>
+    </div>
+  </div>
+
+  <!-- Section 3: Amazon Gadgets -->
+  <div class="section">
+    <h2>🔹 Amazon Gadgets You’ll Love</h2>
+    <div class="cards">
+      <a href="https://www.amazon.com/dp/PRODUCT_ID?tag=YOUR_AFFILIATE_ID" target="_blank" class="card">
+        <img src="https://images.unsplash.com/photo-1510557880182-3f8b3b57445f?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80" alt="Gadget 1">
+        <div class="card-content">
+          <h3>Gadget 1</h3>
+          <p>Short description of your curated Amazon gadget.</p>
+        </div>
+      </a>
+      <a href="https://www.amazon.com/dp/PRODUCT_ID?tag=YOUR_AFFILIATE_ID" target="_blank" class="card">
+        <img src="https://images.unsplash.com/photo-1542223616-20f277f11b0d?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80" alt="Gadget 2">
+        <div class="card-content">
+          <h3>Gadget 2</h3>
+          <p>Short description of your curated Amazon gadget.</p>
+        </div>
+      </a>
+      <a href="https://www.amazon.com/dp/PRODUCT_ID?tag=YOUR_AFFILIATE_ID" target="_blank" class="card">
+        <img src="https://images.unsplash.com/photo-1517430816045-df4b7de11d1e?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80" alt="Gadget 3">
+        <div class="card-content">
+          <h3>Gadget 3</h3>
+          <p>Short description of your curated Amazon gadget.</p>
+        </div>
+      </a>
+    </div>
+  </div>
+
+  <!-- Section 4: Daily Deals -->
+  <div class="section">
+    <h2>🔹 Daily Deals</h2>
+    <div class="cards">
+      <a href="https://www.amazon.com/dp/PRODUCT_ID?tag=YOUR_AFFILIATE_ID" target="_blank" class="card">
+        <img src="https://images.unsplash.com/photo-1508780709619-79562169bc64?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80" alt="Deal 1">
+        <div class="card-content">
+          <h3>Deal 1</h3>
+          <p>Update occasionally with whatever you promote.</p>
+        </div>
+      </a>
+      <a href="https://www.amazon.com/dp/PRODUCT_ID?tag=YOUR_AFFILIATE_ID" target="_blank" class="card">
+        <img src="https://images.unsplash.com/photo-1508780709619-79562169bc64?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80" alt="Deal 2">
+        <div class="card-content">
+          <h3>Deal 2</h3>
+          <p>Update occasionally with whatever you promote.</p>
+        </div>
+      </a>
+    </div>
+  </div>
 
 </div>
 
 <footer>
-  &copy; 2025 JurassicTechToolsHub. All Rights Reserved.
+  &copy; 2025 Your Name. All Rights Reserved.
 </footer>
 
 </body>
