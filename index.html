@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tools & Gadgets I Use / Recommend</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin:0; padding:0; font-family: 'Inter', sans-serif; }
+    body { background: #121212; color: #e0e0e0; line-height:1.6; }
+    a { text-decoration:none; color: inherit; }
+
+    header { background: #0d47a1; color:white; padding:2rem 1rem; text-align:center; }
+    header h1 { font-size:2rem; }
+
+    .container { max-width:1200px; margin:2rem auto; padding:0 1rem; }
+    .section { margin-bottom:3rem; }
+    .section h2 { font-size:1.25rem; margin-bottom:1rem; color:#2196f3; }
+
+    /* Controls */
+    .controls { display:flex; gap:1rem; align-items:center; margin-bottom:1rem; flex-wrap:wrap;}
+    .search-input { flex:1; min-width:200px; }
+    .search-input input { width:100%; padding:0.6rem 0.75rem; border-radius:8px; border:1px solid #263238; background:#111; color:#e0e0e0; }
+    .filters { display:flex; gap:0.5rem; flex-wrap:wrap; }
+
+    .filter-btn { background:#1e1e1e; color:#b0bec5; border:1px solid #263238; padding:0.5rem 0.75rem; border-radius:8px; cursor:pointer; }
+    .filter-btn.active { background:#0d47a1; color:white; border-color:#0d47a1; }
+
+    .cards { display:grid; grid-template-columns:repeat(auto-fill,minmax(200px,1fr)); gap:1rem; }
+    .card { background:#1e1e1e; border-radius:10px; overflow:hidden;
+      box-shadow:0 4px 10px rgba(0,0,0,0.5); transition:transform 0.18s, box-shadow 0.18s; display:flex; flex-direction:column; }
+    .card:hover { transform: translateY(-4px); box-shadow:0 8px 20px rgba(0,0,0,0.7); }
+
+    .card img { width:100%; height:140px; object-fit:cover; background:#121212; display:block; }
+    .card-content { padding:0.9rem; flex:1; display:flex; flex-direction:column; justify-content:space-between; }
+    .card-content h3 { margin-bottom:0.5rem; color:#2196f3; font-size:1rem; }
+    .card-content p { font-size:0.88rem; color:#b0bec5; margin-bottom:0.75rem; }
+
+    .buy-btn { background:#0d47a1; color:white; padding:0.5rem; text-align:center; border-radius:8px; display:block; }
+    .buy-btn:hover { background:#1565c0; }
+
+    .pagination { display:flex; gap:0.5rem; justify-content:center; margin-top:1.25rem; flex-wrap:wrap; }
+    .page-btn { background:#1e1e1e; color:#b0bec5; padding:0.45rem 0.65rem; border-radius:6px; cursor:pointer; border:1px solid #263238; }
+    .page-btn.active { background:#0d47a1; color:white; border-color:#0d47a1; }
+
+    footer { text-align:center; padding:2rem 1rem; background:#0d47a1; color:white; margin-top:2rem; }
+
+    @media(max-width:600px){
+      header h1{ font-size:1.4rem; }
+      .cards { grid-template-columns: 1fr; gap:0.6rem; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>🛠️ Tools & Gadgets I Use / Recommend</h1>
+</header>
+
+<div class="container">
+
+  <!-- Essential Apps (replaced) -->
+  <div class="section">
+    <h2>🔹 Essential Apps (Free + Paid)</h2>
+    <div class="cards" style="grid-template-columns:repeat(auto-fill,minmax(240px,1fr));">
+      <a href="#" class="card" target="_blank" rel="noopener noreferrer">
+        <img src="images/gearup.png" alt="GearUp logo" loading="lazy">
+        <div class="card-content">
+          <div>
+            <h3>GearUp</h3>
+            <p>Boost your workflow and automate repetitive tasks with GearUp.</p>
+          </div>
+          <span class="buy-btn">Visit GearUp</span>
+        </div>
+      </a>
+
+      <a href="#" class="card" target="_blank" rel="noopener noreferrer">
+        <img src="images/safeshellvpn.png" alt="SafeShell VPN logo" loading="lazy">
+        <div class="card-content">
+          <div>
+            <h3>SafeShell VPN</h3>
+            <p>Stay private and secure online with encrypted browsing and fast servers.</p>
+          </div>
+          <span class="buy-btn">Visit SafeShellVPN</span>
+        </div>
+      </a>
+    </div>
+  </div>
+
+  <!-- Controls for Amazon Gadgets -->
+  <div class="section">
+    <h2>🔹 Amazon Gadgets You’ll Love</h2>
+
+    <div class="controls">
+      <div class="search-input">
+        <input id="search" type="search" placeholder="Search gadgets by name..." aria-label="Search gadgets">
+      </div>
+
+      <div class="filters" id="categoryFilters" aria-label="Category filters">
+        <button class="filter-btn active" data-cat="All">All</button>
+        <button class="filter-btn" data-cat="Tech">Tech</button>
+        <button class="filter-btn" data-cat="Home">Home</button>
+        <button class="filter-btn" data-cat="Fitness">Fitness</button>
+        <button class="filter-btn" data-cat="Kitchen">Kitchen</button>
+        <button class="filter-btn" data-cat="Outdoors">Outdoors</button>
+      </div>
+    </div>
+
+    <!-- gadgets grid -->
+    <div class="cards" id="gadgetsGrid">
+      <!-- 50 gadget cards generated below. Each has:
+           - href pointing to an affiliate placeholder
+           - image path images/gadgetX.jpg
+           - data-name and data-category attributes
+      -->
+      <!-- Note: replace PRODUCT_IDX with the real Amazon product ASIN and YOUR_AFFILIATE_ID with your tag -->
+      
+      <!-- Generated gadget cards start -->
+      <!-- We'll assign categories in a repeating pattern for easy filtering -->
+      <!-- Gadget 1..50 -->
+      <!-- Example card format:
+      <a class="card gadget" data-name="Gadget 1" data-category="Tech" href="https://www.amazon.com/dp/PRODUCT_ID1?tag=YOUR_AFFILIATE_ID" target="_blank" rel="noopener noreferrer">
+        <img src="images/gadget1.jpg" alt="Gadget 1" loading="lazy">
+        <div class="card-content">
+          <div>
+            <h3>Gadget 1</h3>
+            <p>Short description here.</p>
+          </div>
+          <span class="buy-btn">Buy on Amazon</span>
+        </div>
+      </a>
+      -->
+      <!-- 1-50 generated below -->
+      <!-- I'll generate them now: -->
+      <!-- (Categories cycle: Tech, Home, Fitness, Kitchen, Outdoors) -->
+      <!-- Start generation -->
+      <!-- Gadget 1 -->
+      <a class="card gadget" data-name="Gadget 1" data-category="Tech" href="https://www.amazon.com/dp/PRODUCT_ID1?tag=YOUR_AFFILIATE_ID" target="_blank" rel="noopener noreferrer">
+        <img src="images/gadget1.jpg" alt="Gadget 1" loading="lazy">
+        <div class="card-content">
+          <div>
+            <h3>Gadget 1</h3>
+            <p>Short description here.</p>
+          </div>
+          <span class="buy-btn">Buy on Amazon</span>
+        </div>
+      </a>
+      <!-- Gadget 2 -->
+      <a class="card gadget" data-name="Gadget 2" data-category="Home" href="https://www.amazon.com/dp/PRODUCT_ID2?tag=YOUR_AFFILIATE_ID" target="_blank" rel="noopener noreferrer">
+        <img src="images/gadget2.jpg" alt="Gadget 2" loading="lazy">
+        <div class="card-content">
+          <div>
+            <h3>Gadget 2</h3>
+            <p>Short description here.</p>
+          </div>
+          <span class="buy-btn">Buy on Amazon</span>
+        </div>
+      </a>
+      <!-- Gadget 3 -->
+      <a class="card gadget" data-name="Gadget 3" data-category="Fitness" href="https://www.amazon.com/dp/PRODUCT_ID3?tag=YOUR_AFFILIATE_ID" target="_blank" rel="noopener noreferrer">
+        <img src="images/gadget3.jpg" alt="Gadget 3" loading="lazy">
+        <div class="card-content">
+          <div>
+            <h3>Gadget 3</h3>
+            <p>Short description here.</p>
+          </div>
+          <span class="buy-btn">Buy on Amazon</span>
+        </div>
+      </a>
+      <!-- Gadget 4 -->
+      <a class="card gadget" data-name="Gadget 4" data-category="Kitchen" href="https://www.amazon.com/dp/PRODUCT_ID4?tag=YOUR_AFFILIATE_ID" target="_blank" rel="noopener noreferrer">
+        <img src="images/gadget4.jpg" alt="Gadget 4" loading="lazy">
+        <div class="card-content">
+          <div>
+            <h3>Gadget 4</h3>
+            <p>Short description here.</p>
+          </div>
+          <span class="buy-btn">Buy on Amazon</span>
+        </div>
+      </a>
+      <!-- Gadget 5 -->
+      <a class="card gadget" data-name="Gadget 5" data-category="Outdoors" href="https://www.amazon.com/dp/PRODUCT_ID5?tag=YOUR_AFFILIATE_ID" target="_blank" rel="noopener noreferrer">
+        <img src="images/gadget5.jpg" alt="Gadget 5" loading="lazy">
+        <div class="card-content">
+          <div>
+            <h3>Gadget 5</h3>
+            <p>Short description here.</p>
+          </div>
+          <span class="buy-btn">Buy on Amazon</span>
+        </div>
+      </a>
+      <!-- Gadget 6 -->
+      <a class="card gadget" data-name="Gadget 6" data-category="Tech" href="https://www.amazon.com/dp/PRODUCT_ID6?tag=YOUR_AFFILIATE_ID" target="_blank" rel="noopener noreferrer">
+        <img src="images/gadget6.jpg" alt="Gadget 6" loading="lazy">
+        <div class="card-content">
+          <div>
+            <h3>Gadget 6</h3>
+            <p>Short description here.</p>
+          </div>
+          <span class="buy-btn">Buy on Amazon</span>
+        </div>
+      </a>
+      <!-- Gadget 7 -->
+      <a class="card gadget" data-name="Gadget 7" data-category="Home" href="https://www.amazon.com/dp/PRODUCT_ID7?tag=YOUR_AFFILIATE_ID" target="_blank" rel="noopener noreferrer">
+        <img src="images/gadget7.jpg" alt="Gadget 7" loading="lazy">
+        <div class="card-content">
+          <div>
+            <h3>Gadget 7</h3>
+            <p>Short description here.</p>
+          </div>
+          <span class="buy-btn">Buy on Amazon</span>
+        </div>
+      </a>
+      <!-- Gadget 8 -->
+      <a class="card gadget" data-name="Gadget 8" data-category="Fitness" href="https://www.amazon.com/dp/PRODUCT_ID8?tag=YOUR_AFFILIATE_ID" target="_blank" rel="noopener noreferrer">
+        <img src="images/gadget8.jpg" alt="Gadget 8" loading="lazy">
+        <div class="card-content">
+          <div>
+            <h3>Gadget 8</h3>
+            <p>Short description here.</p>
+          </div>
+          <span class="buy-btn">Buy on Amazon</span>
+        </div>
+      </a>
+      <!-- Gadget 9 -->
+      <a class="card gadget" data-name="Gadget 9" data-category="Kitchen" href="https://www.amazon.com/dp/PRODUCT_ID9?tag=YOUR_AFFILIATE_ID" target="_blank" rel="noopener noreferrer">
+        <img src="images/gadget9.jpg" alt="Gadget 9" loading="lazy">
+        <div class="card-content">
+          <div>
+            <h3>Gadget 9</h3>
+            <p>Short description here.</p>
+          </div>
+          <span class="buy-btn">Buy on Amazon</span>
+        </div>
+      </a>
+      <!-- Gadget 10 -->
+      <a class="card gadget" data-name="Gadget 10" data-category="Outdoors" href="https://www.amazon.com/dp/PRODUCT_ID10?tag=YOUR_AFFILIATE_ID" target="_blank" rel="noopener noreferrer">
+        <img src="images/gadget10.jpg" alt="Gadget 10" loading="lazy">
+        <div class="card-content">
+          <div>
+            <h3>Gadget 10</h3>
+            <p>Short description here.</p>
+          </div>
+          <span class="buy-btn">Buy on Amazon</span>
+        </div>
+      </a>
+      <!-- Gadget 11 -->
+      <a class="card gadget" data-name="Gadget 11" data-category="Tech" href="https://www.amazon.com/dp/PRODUCT_ID11?tag=YOUR_AFFILIATE_ID" target="_blank" rel="noopener noreferrer">
+        <img src="images/gadget11.jpg" alt="Gadget 11" loading="lazy">
+        <div class="card-content">
+          <div>
+            <h3>Gadget 11</h3>
+            <p>Short description here.</p>
+          </div>
+          <span class="buy-btn">Buy on Amazon</span>
+        </div>
+      </a>
+      <!-- Gadget 12 -->
+      <a class="card gadget" data-name="Gadget 12" data-category="Home" href="https://www.amazon.com/dp/PRODUCT_ID12?tag=YOUR_AFFILIATE_ID" target="_blank" rel="noopener noreferrer">
+        <img src="images/gadget12.jpg" alt="Gadget 12" loading="lazy">
+        <div class="card-content">
+          <div>
+            <h3>Gadget 12</h3>
+            <p>Short description here.</p>
+          </div>
+          <span class="buy-btn">Buy on Amazon</span>
+        </div>
+      </a>
+      <!-- Gadget 13 -->
+      <a class="card gadget" data-name="Gadget 13" data-category="Fitness" href="https://www.amazon.com/dp/PRODUCT_ID13?tag=YOUR_AFFILIATE_ID" target="_blank" rel="noopener noreferrer">
+        <img src="images/gadget13.jpg" alt="Gadget 13" loading="lazy">
+        <div class="card-content">
+          <div>
+            <h3>Gadget 13</h3>
+            <p>Short description here.</p>
+          </div>
+          <span class="buy-btn">Buy on Amazon</span>
+        </div>
+      </a>
+      <!-- Gadget 14 -->
+      <a class="card gadget" data-name="Gadget 14" data-category="Kitchen" href="https://www.amazon.com/dp/PRODUCT_ID14?tag=YOUR_AFFILIATE_ID" target="_blank" rel="noopener noreferrer">
+        <img src="images/gadget14.jpg" alt="Gadget 14" loading="lazy">
+        <div class="card-content">
+          <div>
+            <h3>Gadget 14</h3>
+            <p>Short description here.</p>
+          </div>
+          <span class="buy-btn">Buy on Amazon</span>
+        </div>
+      </a>
+      <!-- Gadget 15 -->
+      <a class="card gadget" data-name="Gadget 15" data-category="Outdoors" href="https://www.amazon.com/dp/PRODUCT_ID15?tag=YOUR_AFFILIATE_ID" target="_blank" rel="noopener noreferrer">
+        <img src="images/gadget15.jpg" alt="Gadget 15" loading="lazy">
+        <div class="card-content">
+          <div>
+            <h3>Gadget 15</h3>
+            <p>Short description here.</p>
+          </div>
+          <span class="buy-btn">Buy on Amazon</span>
+        </div>
+      </a>
+      <!-- Gadget 16 -->
+      <a class="card gadget" data-name="Gadget 16" data-category="Tech" href="https://www.amazon.com/dp/PRODUCT_ID16?tag=YOUR_AFFILIATE_ID" target="_blank" rel="noopener noreferrer">
+        <img src="images/gadget16.jpg" alt="Gadget 16" loading="lazy">
+        <div class="card-content">
+          <div>
+            <h3>Gadget 16</h3>
+            <p>Short description here.</p>
+          </div>
+          <span class="buy-btn">Buy on Amazon</span>
+        </div>
+      </a>
+      <!-- Gadget 17 -->
+      <a class="card gadget" data-name="Gadget 17" data-category="Home" href="https://www.amazon.com/dp/PRODUCT_ID17?tag=YOUR_AFFILIATE_ID" target="_blank" rel="noopener noreferrer">
+        <img src="images/gadget17.jpg" alt="Gadget 17" loading="lazy">
+        <div class="card-content">
+          <div>
+            <h3>Gadget 17</h3>
+            <p>Short description here.</p>
+          </div>
+          <span class="buy-btn">Buy on Amazon</span>
+        </div>
+      </a>
+      <!-- Gadget 18 -->
+      <a class="card gadget" data-name="Gadget 18" data-category="Fitness" href="https://www.amazon.com/dp/PRODUCT_ID18?tag=YOUR_AFFILIATE_ID" target="_blank" rel="noopener noreferrer">
+        <img src="images/gadget18.jpg" alt="Gadget 18" loading="lazy">
+        <div class="card-content">
+          <div>
+            <h3>Gadget 18</h3>
+            <p>Short description here.</p>
+          </div>
+          <span class="buy-btn">Buy on Amazon</span>
+        </div>
+      </a>
+      <!-- Gadget 19 -->
+      <a class="card gadget" data-name="Gadget 19" data-category="Kitchen" href="https://www.amazon.com/dp/PRODUCT_ID19?tag=YOUR_AFFILIATE_ID" target="_blank" rel="noopener noreferrer">
+        <img src="images/gadget19.jpg" alt="Gadget 19" loading="lazy">
+        <div class="card-content">
+          <div>
+            <h3>Gadget 19</h3>
+            <p>Short description here.</p>
+          </div>
+          <span class="buy-btn">Buy on Amazon</span>
+        </div>
+      </a>
+      <!-- Gadget 20 -->
+      <a class="card gadget" data-name="Gadget 20" data-category="Outdoors" href="https://www.amazon.com/dp/PRODUCT_ID20?tag=YOUR_AFFILIATE_ID" target="_blank" rel="noopener noreferrer">
+        <img src="images/gadget20.jpg" alt="Gadget 20" loading="lazy">
+        <div class="card-content">
+          <div>
+            <h3>Gadget 20</h3>
+            <p>Short description here.</p>
+          </div>
+          <span class="buy-btn">Buy on Amazon</span>
+        </div>
+      </a>
+      <!-- Gadget 21 -->
+      <a class="card gadget" data-name="Gadget 21" data-category="Tech" href="https://www.amazon.com/dp/PRODUCT_ID21?tag=YOUR_AFFILIATE_ID" target="_blank" rel="noopener noreferrer">
+        <img src="images/gadget21.jpg" alt="Gadget 21" loading="lazy">
+        <div class="card-content">
+          <div>
+            <h3>Gadget 21</h3>
+            <p>Short description here.</p>
+          </div>
+          <span class="buy-btn">Buy on Amazon</span>
+        </div>
+      </a>
+      <!-- Gadget 22 -->
+      <a class="card gadget" data-name="Gadget 22" data-category="Home" href="https://www.amazon.com/dp/PRODUCT_ID22?tag=YOUR_AFFILIATE_ID" target="_blank" rel="noopener noreferrer">
+        <img src="images/gadget22.jpg" alt="Gadget 22" loading="lazy">
+        <div class="card-content">
+          <div>
+            <h3>Gadget 22</h3>
+            <p>Short description here.</p>
+          </div>
+          <span class="buy-btn">Buy on Amazon</span>
+        </div>
+      </a>
+      <!-- Gadget 23 -->
+      <a class="card gadget" data-name="Gadget 23" data-category="Fitness" href="https://www.amazon.com/dp/PRODUCT_ID23?tag=YOUR_AFFILIATE_ID" target="_blank" rel="noopener noreferrer">
+        <img src="images/gadget23.jpg" alt="Gadget 23" loading="lazy">
+        <div class="card-content">
+          <div>
+            <h3>Gadget 23</h3>
+            <p>Short description here.</p>
+          </div>
+          <span class="buy-btn">Buy on Amazon</span>
+        </div>
+      </a>
+      <!-- Gadget 24 -->
+      <a class="card gadget" data-name="Gadget 24" data-category="Kitchen" href="https://www.amazon.com/dp/PRODUCT_ID24?tag=YOUR_AFFILIATE_ID" target="_blank" rel="noopener noreferrer">
+        <img src="images/gadget24.jpg" alt="Gadget 24" loading="lazy">
+        <div class="card-content">
+          <div>
+            <h3>Gadget 24</h3>
+            <p>Short description here.</p>
+          </div>
+          <span class="buy-btn">Buy on Amazon</span>
+        </div>
+      </a>
+      <!-- Gadget 25 -->
+      <a class="card gadget" data-name="Gadget 25" data-category="Outdoors" href="https://www.amazon.com/dp/PRODUCT_ID25?tag=YOUR_AFFILIATE_ID" target="_blank" rel="noopener noreferrer">
+        <img src="images/gadget25.jpg" alt="Gadget 25" loading="lazy">
+        <div class="card-content">
+          <div>
+            <h3>Gadget 25</h3>
+            <p>Short description here.</p>
+          </div>
+          <span class="buy-btn">Buy on Amazon</span>
+        </div>
+      </a>
+      <!-- Gadget 26 -->
+      <a class="card gadget" data-name="Gadget 26" data-category="Tech" href="https://www.amazon.com/dp/PRODUCT_ID26?tag=YOUR_AFFILIATE_ID" target="_blank" rel="noopener noreferrer">
+        <img src="images/gadget26.jpg" alt="Gadget 26" loading="lazy">
+        <div class="card-content">
+          <div>
+            <h3>Gadget 26</h3>
+            <p>Short description here.</p>
+          </div>
+          <span class="buy-btn">Buy on Amazon</span>
+        </div>
+      </a>
+      <!-- Gadget 27 -->
+      <a class="card gadget" data-name="Gadget 27" data-category="Home" href="https://www.amazon.com/dp/PRODUCT_ID27?tag=YOUR_AFFILIATE_ID" target="_blank" rel="noopener noreferrer">
+        <img src="images/gadget27.jpg" alt="Gadget 27" loading="lazy">
+        <div class="card-content">
+          <div>
+            <h3>Gadget 27</h3>
+            <p>Short description here.</p>
+          </div>
+          <span class="buy-btn">Buy on Amazon</span>
+        </div>
+      </a>
+      <!-- Gadget 28 -->
+      <a class="card gadget" data-name="Gadget 28" data-category="Fitness" href="https://www.amazon.com/dp/PRODUCT_ID28?tag=YOUR_AFFILIATE_ID" target="_blank" rel="noopener noreferrer">
+        <img src="images/gadget28.jpg" alt="Gadget 28" loading="lazy">
+        <div class="card-content">
+          <div>
+            <h3>Gadget 28</h3>
+            <p>Short description here.</p>
+          </div>
+          <span class="buy-btn">Buy on Amazon</span>
+        </div>
+      </a>
+      <!-- Gadget 29 -->
+      <a class="card gadget" data-name="Gadget 29" data-category="Kitchen" href="https://www.amazon.com/dp/PRODUCT_ID29?tag=YOUR_AFFILIATE_ID" target="_blank" rel="noopener noreferrer">
+        <img src="images/gadget29.jpg" alt="Gadget 29" loading="lazy">
+        <div class="card-content">
+          <div>
+            <h3>Gadget 29</h3>
+            <p>Short description here.</p>
+          </div>
+          <span class="buy-btn">Buy on Amazon</span>
+        </div>
+      </a>
+      <!-- Gadget 30 -->
+      <a class="card gadget" data-name="Gadget 30" data-category="Outdoors" href="https://www.amazon.com/dp/PRODUCT_ID30?tag=YOUR_AFFILIATE_ID" target="_blank" rel="noopener noreferrer">
+        <img src="images/gadget30.jpg" alt="Gadget 30" loading="lazy">
+        <div class="card-content">
+          <div>
+            <h3>Gadget 30</h3>
+            <p>Short description here.</p>
+          </div>
+          <span class="buy-btn">Buy on Amazon</span>
+        </div>
+      </a>
+      <!-- Gadget 31 -->
+      <a class="card gadget" data-name="Gadget 31" data-category="Tech" href="https://www.amazon.com/dp/PRODUCT_ID31?tag=YOUR_AFFILIATE_ID" target="_blank" rel="noopener noreferrer">
+        <img src="images/gadget31.jpg" alt="Gadget 31" loading="lazy">
+        <div class="card-content">
+          <div>
+            <h3>Gadget 31</h3>
+            <p>Short description here.</p>
+          </div>
+          <span class="buy-btn">Buy on Amazon</span>
+        </div>
+      </a>
+      <!-- Gadget 32 -->
+      <a class="card gadget" data-name="Gadget 32" data-category="Home" href="https://www.amazon.com/dp/PRODUCT_ID32?tag=YOUR_AFFILIATE_ID" target="_blank" rel="noopener noreferrer">
+        <img src="images/gadget32.jpg" alt="Gadget 32" loading="lazy">
+        <div class="card-content">
+          <div>
+            <h3>Gadget 32</h3>
+            <p>Short description here.</p>
+          </div>
+          <span class="buy-btn">Buy on Amazon</span>
+        </div>
+      </a>
+      <!-- Gadget 33 -->
+      <a class="card gadget" data-name="Gadget 33" data-category="Fitness" href="https://www.amazon.com/dp/PRODUCT_ID33?tag=YOUR_AFFILIATE_ID" target="_blank" rel="noopener noreferrer">
+        <img src="images/gadget33.jpg" alt="Gadget 33" loading="lazy">
+        <div class="card-content">
+          <div>
+            <h3>Gadget 33</h3>
+            <p>Short description here.</p>
+          </div>
+          <span class="buy-btn">Buy on Amazon</span>
+        </div>
+      </a>
+      <!-- Gadget 34 -->
+      <a class="card gadget" data-name="Gadget 34" data-category="Kitchen" href="https://www.amazon.com/dp/PRODUCT_ID34?tag=YOUR_AFFILIATE_ID" target="_blank" rel="noopener noreferrer">
+        <img src="images/gadget34.jpg" alt="Gadget 34" loading="lazy">
+        <div class="card-content">
+          <div>
+            <h3>Gadget 34</h3>
+            <p>Short description here.</p>
+          </div>
+          <span class="buy-btn">Buy on Amazon</span>
+        </div>
+      </a>
+      <!-- Gadget 35 -->
+      <a class="card gadget" data-name="Gadget 35" data-category="Outdoors" href="https://www.amazon.com/dp/PRODUCT_ID35?tag=YOUR_AFFILIATE_ID" target="_blank" rel="noopener noreferrer">
+        <img src="images/gadget35.jpg" alt="Gadget 35" loading="lazy">
+        <div class="card-content">
+          <div>
+            <h3>Gadget 35</h3>
+            <p>Short description here.</p>
+          </div>
+          <span class="buy-btn">Buy on Amazon</span>
+        </div>
+      </a>
+      <!-- Gadget 36 -->
+      <a class="card gadget" data-name="Gadget 36" data-category="Tech" href="https://www.amazon.com/dp/PRODUCT_ID36?tag=YOUR_AFFILIATE_ID" target="_blank" rel="noopener noreferrer">
+        <img src="images/gadget36.jpg" alt="Gadget 36" loading="lazy">
+        <div class="card-content">
+          <div>
+            <h3>Gadget 36</h3>
+            <p>Short description here.</p>
+          </div>
+          <span class="buy-btn">Buy on Amazon</span>
+        </div>
+      </a>
+      <!-- Gadget 37 -->
+      <a class="card gadget" data-name="Gadget 37" data-category="Home" href="https://www.amazon.com/dp/PRODUCT_ID37?tag=YOUR_AFFILIATE_ID" target="_blank" rel="noopener noreferrer">
+        <img src="images/gadget37.jpg" alt="Gadget 37" loading="lazy">
+        <div class="card-content">
+          <div>
+            <h3>Gadget 37</h3>
+            <p>Short description here.</p>
+          </div>
+          <span class="buy-btn">Buy on Amazon</span>
+        </div>
+      </a>
+      <!-- Gadget 38 -->
+      <a class="card gadget" data-name="Gadget 38" data-category="Fitness" href="https://www.amazon.com/dp/PRODUCT_ID38?tag=YOUR_AFFILIATE_ID" target="_blank" rel="noopener noreferrer">
+        <img src="images/gadget38.jpg" alt="Gadget 38" loading="lazy">
+        <div class="card-content">
+          <div>
+            <h3>Gadget 38</h3>
+            <p>Short description here.</p>
+          </div>
+          <span class="buy-btn">Buy on Amazon</span>
+        </div>
+      </a>
+      <!-- Gadget 39 -->
+      <a class="card gadget" data-name="Gadget 39" data-category="Kitchen" href="https://www.amazon.com/dp/PRODUCT_ID39?tag=YOUR_AFFILIATE_ID" target="_blank" rel="noopener noreferrer">
+        <img src="images/gadget39.jpg" alt="Gadget 39" loading="lazy">
+        <div class="card-content">
+          <div>
+            <h3>Gadget 39</h3>
+            <p>Short description here.</p>
+          </div>
+          <span class="buy-btn">Buy on Amazon</span>
+        </div>
+      </a>
+      <!-- Gadget 40 -->
+      <a class="card gadget" data-name="Gadget 40" data-category="Outdoors" href="https://www.amazon.com/dp/PRODUCT_ID40?tag=YOUR_AFFILIATE_ID" target="_blank" rel="noopener noreferrer">
+        <img src="images/gadget40.jpg" alt="Gadget 40" loading="lazy">
+        <div class="card-content">
+          <div>
+            <h3>Gadget 40</h3>
+            <p>Short description here.</p>
+          </div>
+          <span class="buy-btn">Buy on Amazon</span>
+        </div>
+      </a>
+      <!-- Gadget 41 -->
+      <a class="card gadget" data-name="Gadget 41" data-category="Tech" href="https://www.amazon.com/dp/PRODUCT_ID41?tag=YOUR_AFFILIATE_ID" target="_blank" rel="noopener noreferrer">
+        <img src="images/gadget41.jpg" alt="Gadget 41" loading="lazy">
+        <div class="card-content">
+          <div>
+            <h3>Gadget 41</h3>
+            <p>Short description here.</p>
+          </div>
+          <span class="buy-btn">Buy on Amazon</span>
+        </div>
+      </a>
+      <!-- Gadget 42 -->
+      <a class="card gadget" data-name="Gadget 42" data-category="Home" href="https://www.amazon.com/dp/PRODUCT_ID42?tag=YOUR_AFFILIATE_ID" target="_blank" rel="noopener noreferrer">
+        <img src="images/gadget42.jpg" alt="Gadget 42" loading="lazy">
+        <div class="card-content">
+          <div>
+            <h3>Gadget 42</h3>
+            <p>Short description here.</p>
+          </div>
+          <span class="buy-btn">Buy on Amazon</span>
+        </div>
+      </a>
+      <!-- Gadget 43 -->
+      <a class="card gadget" data-name="Gadget 43" data-category="Fitness" href="https://www.amazon.com/dp/PRODUCT_ID43?tag=YOUR_AFFILIATE_ID" target="_blank" rel="noopener noreferrer">
+        <img src="images/gadget43.jpg" alt="Gadget 43" loading="lazy">
+        <div class="card-content">
+          <div>
+            <h3>Gadget 43</h3>
+            <p>Short description here.</p>
+          </div>
+          <span class="buy-btn">Buy on Amazon</span>
+        </div>
+      </a>
+      <!-- Gadget 44 -->
+      <a class="card gadget" data-name="Gadget 44" data-category="Kitchen" href="https://www.amazon.com/dp/PRODUCT_ID44?tag=YOUR_AFFILIATE_ID" target="_blank" rel="noopener noreferrer">
+        <img src="images/gadget44.jpg" alt="Gadget 44" loading="lazy">
+        <div class="card-content">
+          <div>
+            <h3>Gadget 44</h3>
+            <p>Short description here.</p>
+          </div>
+          <span class="buy-btn">Buy on Amazon</span>
+        </div>
+      </a>
+      <!-- Gadget 45 -->
+      <a class="card gadget" data-name="Gadget 45" data-category="Outdoors" href="https://www.amazon.com/dp/PRODUCT_ID45?tag=YOUR_AFFILIATE_ID" target="_blank" rel="noopener noreferrer">
+        <img src="images/gadget45.jpg" alt="Gadget 45" loading="lazy">
+        <div class="card-content">
+          <div>
+            <h3>Gadget 45</h3>
+            <p>Short description here.</p>
+          </div>
+          <span class="buy-btn">Buy on Amazon</span>
+        </div>
+      </a>
+      <!-- Gadget 46 -->
+      <a class="card gadget" data-name="Gadget 46" data-category="Tech" href="https://www.amazon.com/dp/PRODUCT_ID46?tag=YOUR_AFFILIATE_ID" target="_blank" rel="noopener noreferrer">
+        <img src="images/gadget46.jpg" alt="Gadget 46" loading="lazy">
+        <div class="card-content">
+          <div>
+            <h3>Gadget 46</h3>
+            <p>Short description here.</p>
+          </div>
+          <span class="buy-btn">Buy on Amazon</span>
+        </div>
+      </a>
+      <!-- Gadget 47 -->
+      <a class="card gadget" data-name="Gadget 47" data-category="Home" href="https://www.amazon.com/dp/PRODUCT_ID47?tag=YOUR_AFFILIATE_ID" target="_blank" rel="noopener noreferrer">
+        <img src="images/gadget47.jpg" alt="Gadget 47" loading="lazy">
+        <div class="card-content">
+          <div>
+            <h3>Gadget 47</h3>
+            <p>Short description here.</p>
+          </div>
+          <span class="buy-btn">Buy on Amazon</span>
+        </div>
+      </a>
+      <!-- Gadget 48 -->
+      <a class="card gadget" data-name="Gadget 48" data-category="Fitness" href="https://www.amazon.com/dp/PRODUCT_ID48?tag=YOUR_AFFILIATE_ID" target="_blank" rel="noopener noreferrer">
+        <img src="images/gadget48.jpg" alt="Gadget 48" loading="lazy">
+        <div class="card-content">
+          <div>
+            <h3>Gadget 48</h3>
+            <p>Short description here.</p>
+          </div>
+          <span class="buy-btn">Buy on Amazon</span>
+        </div>
+      </a>
+      <!-- Gadget 49 -->
+      <a class="card gadget" data-name="Gadget 49" data-category="Kitchen" href="https://www.amazon.com/dp/PRODUCT_ID49?tag=YOUR_AFFILIATE_ID" target="_blank" rel="noopener noreferrer">
+        <img src="images/gadget49.jpg" alt="Gadget 49" loading="lazy">
+        <div class="card-content">
+          <div>
+            <h3>Gadget 49</h3>
+            <p>Short description here.</p>
+          </div>
+          <span class="buy-btn">Buy on Amazon</span>
+        </div>
+      </a>
+      <!-- Gadget 50 -->
+      <a class="card gadget" data-name="Gadget 50" data-category="Outdoors" href="https://www.amazon.com/dp/PRODUCT_ID50?tag=YOUR_AFFILIATE_ID" target="_blank" rel="noopener noreferrer">
+        <img src="images/gadget50.jpg" alt="Gadget 50" loading="lazy">
+        <div class="card-content">
+          <div>
+            <h3>Gadget 50</h3>
+            <p>Short description here.</p>
+          </div>
+          <span class="buy-btn">Buy on Amazon</span>
+        </div>
+      </a>
+      <!-- Generated gadget cards end -->
+    </div>
+
+    <!-- Pagination -->
+    <div class="pagination" id="pagination"></div>
+
+  </div>
+
+</div>
+
+<footer>
+  &copy; 2025 Your Name. All Rights Reserved.
+</footer>
+
+<script>
+  (function(){
+    const gadgets = Array.from(document.querySelectorAll('.gadget'));
+    const searchInput = document.getElementById('search');
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const paginationEl = document.getElementById('pagination');
+    const itemsPerPage = 12;
+    let currentPage = 1;
+    let activeCategory = 'All';
+    let currentSearch = '';
+
+    // Utility: filter gadgets by name/category, return filtered array
+    function filteredList() {
+      const s = currentSearch.trim().toLowerCase();
+      return gadgets.filter(g => {
+        const name = (g.dataset.name || '').toLowerCase();
+        const cat = (g.dataset.category || '');
+        const matchesSearch = !s || name.includes(s);
+        const matchesCat = (activeCategory === 'All') || (cat === activeCategory);
+        return matchesSearch && matchesCat;
+      });
+    }
+
+    function renderPage(page = 1) {
+      const list = filteredList();
+      const total = list.length;
+      const pages = Math.max(1, Math.ceil(total / itemsPerPage));
+      currentPage = Math.min(Math.max(1, page), pages);
+
+      // hide all first
+      gadgets.forEach(g => g.style.display = 'none');
+
+      const start = (currentPage - 1) * itemsPerPage;
+      const end = start + itemsPerPage;
+      list.slice(start, end).forEach(g => g.style.display = '');
+
+      renderPagination(pages);
+    }
+
+    function renderPagination(totalPages) {
+      paginationEl.innerHTML = '';
+      if (totalPages <= 1) return;
+      // Prev
+      const prev = document.createElement('button');
+      prev.className = 'page-btn';
+      prev.textContent = '‹';
+      prev.disabled = currentPage === 1;
+      prev.onclick = () => renderPage(currentPage - 1);
+      paginationEl.appendChild(prev);
+
+      // Pages (limit visible range)
+      const maxButtons = 7;
+      let start = Math.max(1, currentPage - Math.floor(maxButtons/2));
+      let end = Math.min(totalPages, start + maxButtons - 1);
+      if (end - start < maxButtons - 1) start = Math.max(1, end - maxButtons + 1);
+
+      for (let i = start; i <= end; i++) {
+        const btn = document.createElement('button');
+        btn.className = 'page-btn' + (i === currentPage ? ' active' : '');
+        btn.textContent = i;
+        btn.onclick = () => renderPage(i);
+        paginationEl.appendChild(btn);
+      }
+
+      // Next
+      const next = document.createElement('button');
+      next.className = 'page-btn';
+      next.textContent = '›';
+      next.disabled = currentPage === totalPages;
+      next.onclick = () => renderPage(currentPage + 1);
+      paginationEl.appendChild(next);
+    }
+
+    // Search handler (debounced quick)
+    let searchTimer = null;
+    searchInput.addEventListener('input', (e) => {
+      clearTimeout(searchTimer);
+      searchTimer = setTimeout(() => {
+        currentSearch = e.target.value || '';
+        currentPage = 1;
+        renderPage(1);
+      }, 150);
+    });
+
+    // Category filters
+    filterButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterButtons.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        activeCategory = btn.dataset.cat || 'All';
+        currentPage = 1;
+        renderPage(1);
+      });
+    });
+
+    // Initial render
+    renderPage(1);
+  })();
+</script>
+
+</body>
+</html>
